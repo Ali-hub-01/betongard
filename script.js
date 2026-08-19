@@ -1,4 +1,4 @@
-/* POLIGARD — интерактив */
+/* POLIGARD · интерактив */
 (function () {
   "use strict";
 
