@@ -808,3 +808,9 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 .pchip__body{display:flex;flex-direction:column;gap:3px;min-width:0}
 .pchip__body b{color:#fff;font-size:.95rem}
 .pchip__body span{color:var(--muted);font-size:.82rem;line-height:1.45}
+
+/* Каталог-индекс: карточка категории с миниатюрой */
+.chip--img{display:flex;gap:14px;align-items:center}
+.chip--img .chip__img{flex:0 0 60px;width:60px;height:60px;border-radius:12px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.chip--img .chip__img img{width:100%;height:100%;object-fit:contain}
+.chip--img .chip__txt{display:flex;flex-direction:column;gap:3px;min-width:0}
