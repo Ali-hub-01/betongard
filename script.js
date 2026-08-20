@@ -1,4 +1,4 @@
-/* POLIGARD · интерактив */
+/* BETONGARD · интерактив */
 (function () {
   "use strict";
 
@@ -181,7 +181,7 @@
       if (!ok) return;
 
       var text =
-        "Здравствуйте! Заявка с сайта POLIGARD.\n" +
+        "Здравствуйте! Заявка с сайта BETONGARD.\n" +
         "Имя: " + name + "\n" +
         "Телефон: " + phone +
         (msg ? "\nЗадача: " + msg : "");
