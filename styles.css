@@ -459,7 +459,8 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 }
 .pcard:hover .pcard__img img { transform: translateY(-8px) scale(1.03); }
 .pcard__tag {
-  position: absolute; top: 16px; right: 16px; z-index: 3;
+  position: absolute; top: 16px; left: 50%; transform: translateX(-50%); z-index: 3;
+  white-space: nowrap;
   font-size: 1.055rem; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
   color: var(--accent);
   background: rgba(9, 16, 28, 0.92);
