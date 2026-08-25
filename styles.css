@@ -131,6 +131,11 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
   box-shadow: 0 10px 34px rgba(255, 122, 26, 0.32);
 }
 .btn--accent:hover { box-shadow: 0 14px 44px rgba(255, 122, 26, 0.48); }
+.btn--wa {
+  background: var(--wa); color: #fff;
+  box-shadow: 0 10px 34px rgba(43, 183, 65, 0.34);
+}
+.btn--wa:hover { box-shadow: 0 14px 44px rgba(43, 183, 65, 0.5); }
 .btn--accent::after {
   content: ""; position: absolute; inset: 0;
   background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,0.5) 50%, transparent 60%);
@@ -442,10 +447,10 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 }
 .pcard:hover { transform: translateY(-8px); border-color: rgba(255, 122, 26, 0.4); }
 .pcard__img {
-  height: 190px; display: flex; align-items: flex-end; justify-content: center;
-  margin-bottom: 14px;
+  height: 200px; display: flex; align-items: center; justify-content: center;
+  margin-top: 8px; margin-bottom: 14px; padding-top: 26px;
   background:
-    radial-gradient(80% 60% at 50% 78%, rgba(255, 122, 26, 0.14), transparent 70%);
+    radial-gradient(80% 60% at 50% 55%, rgba(255, 122, 26, 0.14), transparent 70%);
 }
 .pcard__img img {
   max-height: 180px; width: auto;
@@ -713,9 +718,10 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 .tel-float {
   position: fixed; left: 20px; bottom: 20px; z-index: 800;
   width: 58px; height: 58px; border-radius: 50%;
-  background: var(--accent); color: #fff;
+  background: #fff; color: #111;
+  border: 2px solid #111;
   display: grid; place-items: center;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.28);
   transition: transform 0.3s var(--ease);
 }
 .tel-float:hover { transform: scale(1.08); }
@@ -766,8 +772,16 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 
   .container { width: min(1180px, 100% - 32px); }
   .hero__content { padding: 30px 0 130px; }
-  .hero__facts { gap: 20px; }
-  .hero__facts span { max-width: 120px; font-size: 1.155rem; }
+  .hero__facts {
+    display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px; column-gap: 14px;
+  }
+  .hero__facts li { min-width: 0; }
+  .hero__facts b { font-size: 1.7rem; }
+  .hero__facts span {
+    max-width: none; font-size: 0.98rem; line-height: 1.32;
+    overflow-wrap: break-word; hyphens: auto;
+  }
   .marquee { padding: 10px 0; transform: rotate(0deg); }
   .marquee span { font-size: 1.115rem; }
 
