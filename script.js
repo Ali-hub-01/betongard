@@ -1,4 +1,4 @@
-/* BETONGARD · интерактив */
+/* BETONGUARD · интерактив */
 (function () {
   "use strict";
 
@@ -181,7 +181,7 @@
       if (!ok) return;
 
       var text =
-        "Здравствуйте! Заявка с сайта BETONGARD.\n" +
+        "Здравствуйте! Заявка с сайта BETONGUARD.\n" +
         "Имя: " + name + "\n" +
         "Телефон: " + phone +
         (msg ? "\nЗадача: " + msg : "");
