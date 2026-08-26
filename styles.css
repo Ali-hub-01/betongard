@@ -494,15 +494,15 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
   background: var(--surface);
   border: 1px solid var(--line);
   border-radius: 16px;
-  padding: 22px 22px 20px 84px;
+  padding: 22px 22px 20px 92px;
   overflow: hidden;
   transition: transform 0.35s var(--ease), border-color 0.3s, background 0.3s;
 }
 .chip:hover { transform: translateY(-4px); border-color: rgba(77, 168, 255, 0.4); background: var(--surface-2); }
 .chip i {
-  position: absolute; left: 18px; top: 50%; transform: translateY(-50%);
+  position: absolute; left: 16px; top: 22px; width: 60px;
   font-family: var(--font-d); font-style: normal; font-weight: 700;
-  font-size: 2.375rem; line-height: 1;
+  font-size: 2rem; line-height: 1;
   color: transparent;
   -webkit-text-stroke: 1.5px rgba(77, 168, 255, 0.55);
 }
