@@ -272,28 +272,33 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 }
 .hero__facts span { color: var(--muted); font-size: 1.225rem; max-width: 150px; line-height: 1.4; }
 
-/* индикатор прокрутки (стрелка вниз) */
+/* плавающий индикатор прокрутки вниз — fixed по центру снизу (как tel/wa кнопки) */
 .hero__scroll {
-  position: absolute; left: 50%; bottom: 58px; transform: translateX(-50%);
-  width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
-  border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.32);
-  background: rgba(7, 14, 26, 0.35); backdrop-filter: blur(4px);
-  color: #fff; z-index: 6;
-  animation: heroScrollIn 0.8s 1.2s var(--ease) both, heroBounce 1.9s 2s var(--ease) infinite;
-  transition: border-color 0.25s, color 0.25s;
+  position: fixed; left: 50%; bottom: 20px; transform: translateX(-50%);
+  width: 54px; height: 54px; display: flex; align-items: center; justify-content: center;
+  border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.42);
+  background: rgba(7, 14, 26, 0.6); backdrop-filter: blur(6px);
+  color: #fff; z-index: 800;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.3);
+  animation: heroScrollIn 0.7s 1s var(--ease) both, heroBounce 1.9s 1.8s var(--ease) infinite;
+  transition: opacity 0.4s var(--ease), visibility 0.4s, border-color 0.25s, color 0.25s;
 }
-.hero__scroll svg { width: 22px; height: 22px; }
+.hero__scroll svg { width: 24px; height: 24px; }
 .hero__scroll:hover { border-color: var(--accent); color: var(--accent); }
+.hero__scroll.is-hidden {
+  opacity: 0; visibility: hidden; pointer-events: none;
+  transform: translate(-50%, 18px); animation: none;
+}
 @keyframes heroBounce {
   0%, 100% { transform: translate(-50%, 0); }
-  50% { transform: translate(-50%, 8px); }
+  50% { transform: translate(-50%, 7px); }
 }
 @keyframes heroScrollIn {
   from { opacity: 0; transform: translate(-50%, -10px); }
   to { opacity: 1; transform: translate(-50%, 0); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero__scroll { animation: heroScrollIn 0.6s both; }
+  .hero__scroll { animation: heroScrollIn 0.5s both; }
 }
 
 /* бегущая лента */
@@ -767,7 +772,10 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 @media (max-width: 720px) {
   :root { --header-h: 64px; }
 
-  .hero__scroll { display: none; }
+  /* прижимаем контент hero к низу, убираем большой зазор до бегущей полосы */
+  .hero { justify-content: flex-end; }
+  .hero__content { padding-bottom: 70px; }
+  .hero__scroll { width: 50px; height: 50px; }
 
   .nav {
     position: fixed; inset: 0;

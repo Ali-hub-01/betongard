@@ -6,8 +6,12 @@
 
   /* ---------- Header: состояние при скролле ---------- */
   var header = document.getElementById("header");
+  var heroScroll = document.querySelector(".hero__scroll");
   function onScrollHeader() {
-    header.classList.toggle("scrolled", window.scrollY > 30);
+    var y = window.scrollY;
+    header.classList.toggle("scrolled", y > 30);
+    /* индикатор прокрутки исчезает, как только пользователь ушёл вниз */
+    if (heroScroll) heroScroll.classList.toggle("is-hidden", y > 140);
   }
   onScrollHeader();
   window.addEventListener("scroll", onScrollHeader, { passive: true });
