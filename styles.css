@@ -232,7 +232,7 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
     linear-gradient(100deg, rgba(7, 14, 26, 0.96) 8%, rgba(7, 14, 26, 0.8) 46%, rgba(9, 18, 34, 0.62) 100%),
     linear-gradient(to top, var(--bg) 2%, transparent 34%);
 }
-.hero__content { padding: 28px 0 40px; }
+.hero__content { padding: 28px 0 0; }
 .hero__overline {
   display: flex; align-items: center; gap: 10px;
   color: var(--accent); font-weight: 800; font-size: 1.175rem;
