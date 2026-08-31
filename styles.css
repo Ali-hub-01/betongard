@@ -805,7 +805,6 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 
   /* прижимаем контент hero к низу, убираем большой зазор до бегущей полосы */
   .hero { justify-content: flex-end; }
-  .hero__content { padding-bottom: 70px; }
   .hero__scroll { width: 50px; height: 50px; }
 
   .nav {
@@ -837,7 +836,7 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
   .burger { display: flex; }
 
   .container { width: min(1180px, 100% - 32px); }
-  .hero__content { padding: 30px 0 130px; }
+  .hero__content { padding: 30px 0 24px; }
   .hero__facts {
     display: grid; grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 12px; column-gap: 14px;
