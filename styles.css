@@ -232,7 +232,7 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
     linear-gradient(100deg, rgba(7, 14, 26, 0.96) 8%, rgba(7, 14, 26, 0.8) 46%, rgba(9, 18, 34, 0.62) 100%),
     linear-gradient(to top, var(--bg) 2%, transparent 34%);
 }
-.hero__content { padding: 28px 0 84px; }
+.hero__content { padding: 28px 0 40px; }
 .hero__overline {
   display: flex; align-items: center; gap: 10px;
   color: var(--accent); font-weight: 800; font-size: 1.175rem;
@@ -274,7 +274,7 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 
 /* индикатор прокрутки (стрелка вниз) */
 .hero__scroll {
-  position: absolute; left: 50%; bottom: 82px; transform: translateX(-50%);
+  position: absolute; left: 50%; bottom: 58px; transform: translateX(-50%);
   width: 46px; height: 46px; display: flex; align-items: center; justify-content: center;
   border-radius: 50%; border: 1.5px solid rgba(255, 255, 255, 0.32);
   background: rgba(7, 14, 26, 0.35); backdrop-filter: blur(4px);
