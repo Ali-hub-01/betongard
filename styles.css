@@ -760,6 +760,11 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 /* ============ Мобильная версия ============ */
 /* на планшетах/узких десктопах прячем полное меню в бургер, чтобы шапка не переполнялась */
 @media (max-width: 1300px) {
+  /* без backdrop-filter у шапки: иначе она создаёт containing block и overlay-меню
+     (position:fixed) покрывает фоном только область шапки, а не весь экран */
+  .header, .header.scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; }
+  .header.scrolled { background: rgba(7, 14, 26, 0.95); }
+
   .nav {
     position: fixed; inset: 0;
     background: #070E1A;
