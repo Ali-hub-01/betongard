@@ -590,7 +590,7 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
   border: 1px solid var(--line);
   aspect-ratio: 4 / 3;
 }
-.wcard--w2 { grid-column: span 2; aspect-ratio: auto; }
+.wcard--w2 { grid-column: span 1; aspect-ratio: 4 / 3; }
 .wcard img {
   width: 100%; height: 100%; object-fit: cover;
   transition: transform 0.7s var(--ease);
@@ -762,8 +762,7 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 @media (max-width: 1300px) {
   .nav {
     position: fixed; inset: 0;
-    background: rgba(7, 14, 26, 0.97);
-    backdrop-filter: blur(16px);
+    background: #070E1A;
     flex-direction: column; justify-content: center; gap: 10px;
     opacity: 0; pointer-events: none;
     transition: opacity 0.35s;
@@ -794,7 +793,7 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
   .dirs__grid { grid-template-columns: 1fr; }
   .apply__grid { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 190px; }
   .works__grid { grid-template-columns: repeat(2, 1fr); }
-  .wcard--w2 { grid-column: span 2; aspect-ratio: 16 / 8; }
+  .wcard--w2 { grid-column: span 1; aspect-ratio: 4 / 3; }
   .why__bento { grid-template-columns: 1fr 1fr; }
   .bcard--big { grid-column: span 2; }
   .about__media img { min-height: 300px; }
@@ -803,8 +802,9 @@ section[id], div[id] { scroll-margin-top: calc(var(--header-h) + 12px); }
 @media (max-width: 720px) {
   :root { --header-h: 64px; }
 
-  /* прижимаем контент hero к низу, убираем большой зазор до бегущей полосы */
-  .hero { justify-content: flex-end; }
+  /* на мобиле высота hero по контенту (без 100svh) — иначе на высоких экранах iPhone
+     остаётся большой пустой промежуток сверху; контент идёт сразу под шапкой */
+  .hero { min-height: auto; justify-content: flex-start; }
   .hero__scroll { width: 50px; height: 50px; }
 
   .nav {
