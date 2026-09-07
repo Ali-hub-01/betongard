@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ali-hub-01.github.io/betongard/sitemap.xml
+Sitemap: https://betonguard.kz/sitemap.xml
