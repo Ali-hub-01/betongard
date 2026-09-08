@@ -194,7 +194,7 @@
 
       document.getElementById("formDone").hidden = false;
       form.querySelector("button[type=submit]").disabled = true;
-      // (Opus: сюда можно повесить gtag-конверсию формы)
+      if (window.betonConv) window.betonConv('form'); // Google Ads: отправка формы
     });
     form.addEventListener("input", function (e) {
       if (e.target.classList) e.target.classList.remove("err");
@@ -205,6 +205,8 @@
   document.addEventListener("click", function (e) {
     var a = e.target.closest && e.target.closest("a[href^='tel:'], a[href*='wa.me']");
     if (!a) return;
-    // (Opus: сюда можно повесить gtag-конверсии клика по телефону/WhatsApp)
+    var href = a.getAttribute("href") || "";
+    if (href.indexOf("tel:") === 0) { if (window.betonConv) window.betonConv('phone'); }      // Google Ads: клик по телефону
+    else if (href.indexOf("wa.me") !== -1) { if (window.betonConv) window.betonConv('whatsapp'); } // Google Ads: клик WhatsApp
   });
 })();

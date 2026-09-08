@@ -3,6 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Google tag (gtag.js) - Google Ads AW-18435967010 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-18435967010"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'AW-18435967010');
+
+  /* Конверсии Google Ads на реальные действия (анти-бот + дедуп за сессию).
+     Вызовы висят в script.js: форма -> 'form', клик tel -> 'phone', клик wa.me -> 'whatsapp'. */
+  (function(){
+    var CONV = {
+      phone:    'AW-18435967010/silXCIHS1PAcEKKQ-tZE', // Интерактивные номера телефонов
+      form:     'AW-18435967010/GlsSCIbZyfAcEKKQ-tZE', // Отправка формы для потенциальных клиентов
+      whatsapp: 'AW-18435967010/Ui8LCJjg1PAcEKKQ-tZE'  // Контакт (WhatsApp)
+    };
+    var human = false;
+    ['pointerdown','pointermove','touchstart','scroll','keydown','wheel'].forEach(function(ev){
+      window.addEventListener(ev, function(){ human = true; }, { once:true, passive:true });
+    });
+    function isBot(){ return !!navigator.webdriver || !human; }
+    window.betonConv = function(key){
+      var sendTo = CONV[key];
+      if(!sendTo || typeof gtag !== 'function' || isBot()) return;
+      try{ var k = 'beton_conv_' + key; if(sessionStorage.getItem(k)) return; sessionStorage.setItem(k,'1'); }catch(e){}
+      gtag('event','conversion',{ 'send_to':sendTo, 'value':1.0, 'currency':'USD' });
+    };
+    window.gtag_report_conversion = function(url){
+      window.betonConv('phone');
+      if(typeof url !== 'undefined'){ setTimeout(function(){ window.location = url; }, 200); }
+      return false;
+    };
+  })();
+</script>
+
   <title>Каталог строительной химии и полов МОНОХИМ | BETONGUARD</title>
   <meta name="description" content="Полный каталог строительной химии и промышленных полов МОНОХИМ: гидроизоляция, наливные полы, ремонтные смеси, топпинги, фибра, герметики. Алматы.">
   <link rel="canonical" href="https://betonguard.kz/catalog.html">
